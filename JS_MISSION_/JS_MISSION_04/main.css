@@ -1,0 +1,117 @@
+/* COMMON */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  position: relative;
+  background-color: #e8e8e8;
+}
+/* HEADER */
+header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header h1 {
+  position: absolute;
+  top: 150px;
+  left: 200px;
+  font-size: 50px;
+  font-weight: 200;
+  color: #b36350;
+}
+header input {
+  position: absolute;
+  top: 230px;
+  left: 200px;
+  padding: 5px 20px;
+}
+.container {
+  position: absolute;
+  top: 260px;
+  left: 200px;
+}
+.container .month {
+  background-color: #44c379;
+  width: 490px;
+  margin-top: 10px;
+  padding: 20px 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px 5px 0 0;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+}
+.container .month .date h1,
+.container .month .date p {
+  font-weight: 300;
+  color: #fff;
+  text-align: center;
+}
+.container .month .material-symbols-outlined {
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+}
+.container .month .material-symbols-outlined:hover {
+  color: #0d170f;
+  transition: 0.5s;
+}
+.calendar {
+  background-color: #fff;
+  padding-top: 40px;
+  padding-bottom: 50px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+}
+.calendar ul {
+  display: flex;
+  width: 490px;
+  border-radius: 0 0 5px 5px;
+  list-style: none;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.calendar .weeks li {
+  color: #b4b4b4;
+  font-weight: 400;
+}
+.calendar ul li {
+  position: relative;
+  width: calc(100% / 7);
+}
+.calendar .days li {
+  margin-top: 30px;
+  cursor: pointer;
+  z-index: 1;
+}
+.days li.inactive {
+  color: #b4b4b4;
+}
+.calendar .days li::before {
+  position: absolute;
+  content: "";
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+}
+/* ??? */
+.days li:hover {
+  color: #fff;
+}
+.days li:hover::before {
+  background-color: #44c379;
+  transition: 0.3s;
+}
+.days li.active::before {
+  border: 1px solid #44c379;
+}
